@@ -30,4 +30,4 @@ Or just run the container, and `drush` will download the latest D7 source code f
 
 ### SSH access
 
-This image contains a SSH publick key of my own.  So if you are using it for your production site, *build from this image and replace the public key with your own*.
+This image follows the practice of [Phusion baseimage](https://github.com/phusion/baseimage-docker#login_ssh) in regard of SSH access.  It contains a SSH publick key of my own.  So if you are using it for your production site, *build from this image and replace the public key with your own*.
