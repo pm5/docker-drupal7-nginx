@@ -1,4 +1,4 @@
-FROM pomin5/php5-nginx:0.1.3
+FROM pomin5/php5-nginx:latest
 MAINTAINER Pomin Wu <pomin5@gmail.com>
 ENV REFRESHED_AT 2015-02-10
 
