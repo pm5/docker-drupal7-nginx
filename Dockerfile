@@ -11,3 +11,5 @@ ADD etc/nginx/sites-enabled /etc/nginx/sites-enabled/
 
 ADD service/drupal7.sh /etc/service/drupal7/run
 RUN chmod 755 /etc/service/drupal7/run
+
+WORKDIR /var/www
