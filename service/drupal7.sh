@@ -17,11 +17,15 @@ if [ ! -f /var/www/index.php ]; then
     ${WWW_DIR}/sites/all/modules/contrib \
     ${WWW_DIR}/sites/all/modules/custom \
     ${WWW_DIR}/sites/all/themes
+  chmod 755 \
+    ${WWW_DIR}/sites/all/modules/contrib \
+    ${WWW_DIR}/sites/all/modules/custom \
+    ${WWW_DIR}/sites/all/themes
+  chmod 775 ${WWW_DIR}/sites/default/files
   if [ ! -f ${WWW_DIR}/sites/default/settings.php ]; then
     cp /tmp/default.settings.php ${WWW_DIR}/sites/default/settings.php
     chmod 0664 ${WWW_DIR}/sites/default/settings.php
     mv /tmp/default.settings.php ${WWW_DIR}/sites/default/ # put it back
   fi
   chown -R app:www-data ${WWW_DIR}
-  chmod 0775 ${WWW_DIR}/sites/default/files
 fi
