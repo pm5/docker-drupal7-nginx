@@ -1,5 +1,5 @@
 
-A Docker image packing PHP5 + nginx + MySQL for Drupal 7.x web sites.
+A Docker image packing PHP5 + nginx for Drupal 7.x web sites.
 
 Usages
 ------
