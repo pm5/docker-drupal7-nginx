@@ -4,13 +4,31 @@ A Docker image packing PHP5 + nginx for Drupal 7.x web sites.
 Usages
 ------
 
-Put your Drupal 7.x web site under project root directory.  Then
+Test D7 modules:
 
-        # put your SSH pubkey at `mykey.pub` if you want SSH access
-        $ make build run
-        # check http://localhost:8080/
+        # in your module's parent directory
+        $ docker run -dt \
+          -p 8080:80 -p 2222:22 -p 2020:20 -p 2121:21 \
+          -e ENABLE_MY_KEY=1 \
+          -v $(PWD):/var/www/sites/all/modules/custom \
+          -v $(PWD)/.run/log:/var/log \
+          --name my_awesome_module_testbox \
+          pomin5/drupal7-nginx:latest
+        # Go to <http://localhost:8080/> and finish D7 installer
 
-If you use [boot2docker](http://boot2docker.io/) replace `localhost` with the IP reported by `boot2docker ip`.
+Test a D7 site:
+
+        # in your site directory
+        $ docker run -dt \
+          -p 8080:80 -p 2222:22 -p 2020:20 -p 2121:21 \
+          -e ENABLE_MY_KEY=1 \
+          -v $(PWD):/var/www \
+          -v $(PWD)/.run/log:/var/log \
+          --name my_awesome_site_testbox \
+          pomin5/drupal7-nginx:latest
+        # Go to <http://localhost:8080/>.  You may need to edit `settings.php`
+
+Or just run the container, and `drush` will download the latest D7 source code for you.
 
 ### SSH access
 
