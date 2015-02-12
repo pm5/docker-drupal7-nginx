@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec ssh -p 8022 app@localhost "cd /var/www; drush $*"
