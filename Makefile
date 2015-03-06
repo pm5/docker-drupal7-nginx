@@ -1,5 +1,5 @@
 NAME = pomin5/drupal7-nginx
-VERSION = latest
+VERSION = 0.1.0
 CONTAINER_NAME=`pwd | sed 's/.*\///'`_drupal7-nginx
 
 .PHONY: build test run
