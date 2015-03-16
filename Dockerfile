@@ -1,6 +1,6 @@
-FROM pomin5/php5-nginx:0.1.4
+FROM pomin5/php5-nginx:0.1.5
 MAINTAINER Pomin Wu <pomin5@gmail.com>
-ENV REFRESHED_AT 2015-02-10
+ENV REFRESHED_AT 2015-03-16
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
